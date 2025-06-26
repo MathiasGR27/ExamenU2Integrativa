@@ -70,9 +70,6 @@ Los eventos personalizados permiten que los Web Components se comuniquen con el 
 - Uso en HTML:  
   ![Uso en HTML](./capturas/uso_en_html.png)
 
-- Inspección en DevTools: Mostrar el elemento personalizado en el árbol DOM  
-  ![DevTools - Elemento personalizado](./capturas/devtools_elemento.png)
-
 ---
 
 ## 2. Uso de Estados Dinámicos 
