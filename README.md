@@ -43,5 +43,4 @@ npm run serve
 ---
 
 ## Demostracion de funcionamiento
-
 ![Funcionamiento de componentes](./docs/funcionamiento.gif)
