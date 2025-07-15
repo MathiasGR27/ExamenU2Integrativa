@@ -1,144 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>U2Tarea2_GualpaMathias</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <title>Carreras ESPE</title>
+  <script type="module" src="./components/career-selector.js"></script>
+  <script type="module" src="./components/career-card.js"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+      padding: 2rem;
+      text-align: center;
+    }
+  </style>
 </head>
-<style>
-   body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      justify-content: center;
-      color: #333;
-    }
-
-    .form-container {
-      background: #FFFFCC;
-      padding: 2.5rem 3rem;
-      border-radius: 20px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-      max-width: 400px;
-      width: 90%;
-      transition: box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: 2px solid #00B140;
-    }
-
-    .form-container:hover {
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-      border-color: #004D00;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-weight: 700;
-      font-size: 2rem;
-      color: #004D00;
-      letter-spacing: 1.2px;
-      user-select: none;
-      width: 100%;
-    }
-
-    label {
-      align-self: flex-start;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: #990000;
-      width: 100%;
-    }
-
-    input {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      font-size: 1rem;
-      border: 2px solid #00B140;
-      border-radius: 12px;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      outline-offset: 2px;
-      margin-bottom: 1.25rem;
-      background-color: #FFFFFF;
-    }
-
-    input:focus {
-      border-color: #004D00;
-      box-shadow: 0 0 8px rgba(0, 77, 0, 0.3);
-    }
-
-    input:hover {
-      border-color: #990000;
-    }
-
-     #mensaje {
-      margin-top: 2rem;
-      text-align: center;
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #004D00;
-      background-color: #00B140;
-      border: 1.5px solid #004D00;
-      padding: 1rem 1.2rem;
-      border-radius: 12px;
-      opacity: 0;
-      max-width: 400px;
-      width: 90%;
-      user-select: none;
-      transition: opacity 0.5s ease;
-      pointer-events: none;
-    }
-
-    #mensaje.visible {
-      opacity: 1;
-      pointer-events: auto;
-    }
-</style>
 <body>
-  <div class="form-container" role="form" aria-labelledby="formTitle">
-    <h2 id="formTitle">Registro</h2>
-
-    <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" autocomplete="given-name" required />
-
-    <label for="apellido">Apellido</label>
-    <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" autocomplete="family-name" required />
-
-    <label for="edad">Edad</label>
-    <input type="number" id="edad" name="edad" placeholder="Ingresa tu edad" min="0" max="120" required />
-
-    <espe-button-loading id="btnGuardar" text="Guardar" aria-label="Guardar formulario"></espe-button-loading>
-  </div>
-
-  <div id="mensaje" role="alert" aria-live="polite" aria-atomic="true"></div>
-
-  <script type="module" src="./espe-button-loading-mg.js"></script>
-
-  <script type="module">
-  const boton = document.getElementById('btnGuardar');
-  const mensaje = document.getElementById('mensaje');
-
-  boton.addEventListener('button-click', () => {
-    mensaje.textContent = '';
-    mensaje.classList.remove('visible');
-
-    boton.loading = true;
-    boton.disabled = true;
-
-    setTimeout(() => {
-      boton.loading = false;
-      boton.disabled = false;
-      mensaje.textContent = 'Datos guardados correctamente ';
-      mensaje.classList.add('visible');
-    }, 2000);
-  });
-</script>
+  <h1>MI MOODLE ESPE</h1>
+  <career-selector></career-selector>
+  <career-card></career-card>
 </body>
 </html>
